@@ -2,13 +2,16 @@
   "name": "copy-eventbrite-backend",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev":"nodemon --exec node src/server.js",
+    "start":"node src/server.js",
+    "build":"echo 'No build step needed or Node ESM'"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["express", "nodemon", "JWT", "Token", "Server"],
+  "author": "Daniela Cruz Mejia",
   "license": "ISC",
-  "description": "",
+  "description": "Proyecto Final del curso de Frontend por DevF: realización de un producto mínimo viable de una boletera de eventos de tipo eventbrite",
   "dependencies": {
     "@supabase/supabase-js": "^2.56.0",
     "bcryptjs": "^3.0.2",
