@@ -3,11 +3,17 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev":"nodemon --exec node src/server.js",
-    "start":"node src/server.js",
-    "build":"echo 'No build step needed or Node ESM'"
+    "dev": "nodemon --exec node src/server.js",
+    "start": "node src/server.js",
+    "build": "echo 'No build step needed or Node ESM'"
   },
-  "keywords": ["express", "nodemon", "JWT", "Token", "Server"],
+  "keywords": [
+    "express",
+    "nodemon",
+    "JWT",
+    "Token",
+    "Server"
+  ],
   "author": "Daniela Cruz Mejia",
   "license": "ISC",
   "description": "Proyecto Final del curso de Frontend por DevF: realización de un producto mínimo viable de una boletera de eventos de tipo eventbrite",

@@ -1,26 +1,24 @@
-import { dotenv } from "dotenv";
-import { mongo } from "mongoose";
-import { url } from "zod";
+import dotenv from 'dotenv';
 dotenv.config();
 
-export const env={
-    nodeEnv: process.env.NODE_ENV ?? "development",
-    port: process.env.PORT ?? 3000,
-    corsOrigin: process.env.CORS_ORIGIN ?? "*",
-    mongoUri: process.env.MONGO_URI,
-    jwt:{
-        accessSecret: process.env.JWT_ACCESS_SECRET,
-        refreshSecret: process.env.JWT_REFRESH_SECRET,
-        accessTtl: process.env.JWT_ACCESS_TTL ?? "15m",
-        refreshTtl: process.env.JWT_REFRESH_TTL ?? "7d",
+export const env = {
+    nodeEnv: process.env.NODE_ENV ?? 'development',
+    port: Number(process.env.PORT ?? 3000),
+    corsOrigin:  process.env.CORS_ORIGIN ?? '*',
+    mongoUri: process.env.MONGODB_URI,
+    jwt: {
+        accessSecret: process.env.JWT_ACCESS_SECRET ,
+        refreshSecret: process.env.JWT_REFRESH_SECRET ,
+        accessTtl: process.env.JWT_ACCESS_TTL ?? '15m',
+        refreshTtl:process.env.JWT_REFRESH_TTL ?? '7d',
     },
-    qrSigningSecret: process.env.QR_SIGNING_SECRET,
-    supabase:{
+    qrSigningSecret:process.env.QR_SIGNING_SECRET,
+    supabase: {
         url: process.env.SUPABASE_URL,
         serviceRoleKey: process.env.SUPABASE_SERVICE_ROLE_KEY,
-        bucket: process.env.SUPABASE_BUCKET,
+        bucket: process.env.SUPABASE_BUCKET
     }
-}
+};
 
 ['mongoUri','jwt','qrSigningSecret','supabase'].forEach((k) => {
   if (k === 'jwt') {
