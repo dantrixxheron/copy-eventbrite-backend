@@ -7,6 +7,20 @@ export async function list(req, res, next) {
   } catch (e) { next(e); }
 }
 
+export async function listOccupied(req, res, next) {
+  try {
+    const eventId = req.params.id
+    const result = await Events.listOccupiedSeats(eventId)
+
+    if (!result) return res.status(404).json({ message: 'Event not found' })
+
+    res.json(result)
+  } catch (e) {
+    next(e)
+  }
+}
+
+
 export async function get(req, res, next) {
   try {
     const item = await Events.getById(req.params.id);
